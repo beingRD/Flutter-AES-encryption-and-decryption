@@ -1,6 +1,7 @@
-# encryptions
+# AES encryption Flutter Plugin
 
 A new flutter plugin project.
+
 
 ## Getting Started
 
