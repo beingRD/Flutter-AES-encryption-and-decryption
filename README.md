@@ -1,10 +1,12 @@
-# Encryption & Decryption Flutter Plugin:
-* AES 128
+# Encryption & Decryption Flutter Plugin [![Build Status](https://travis-ci.org/Daegalus/dart-uuid.svg?branch=master)](https://travis-ci.org/Daegalus/dart-uuid)
+* AES 128 
 * AES 256
 * CBC
 * No Padding
 * ARGON 2i
 * ARGON 2d
+
+
 
 ## Plugin Definition
 
@@ -13,14 +15,14 @@
 In fact, it seems that you can also directly call the implementation of the Platform channel in the Flutter project. Considering that this part can be separated to maintain and benefit the future, you can choose to create a Plugin. 
 
 ###### First you need to create a plugin project, by the following command:
-```
+```dart
 flutter create --org com.beingRD --template=plugin encryptions
 ```
 This will generate a project, it is worth noting that Android will use Java here, iOS will use Objective-C. But Objective-C is too much trouble for people like me who have no foundation. I tried it and gave up. So you need to switch to Swift. 
 
 ###### There is a small way to modify only the iOS part:
 
-```
+```dart
 cd encryptions
 rm -rf ios examples/ios
 flutter create -i swift --org com.beingRD .
@@ -32,7 +34,7 @@ Execute this command after deleting the ios directory, you can regenerate the iO
 ###### Defining the Dart interface
 First define the interface we want to expose. For example, for AES encrypted functions, we can write:
 
-```
+```dart
 class Encryptions {
   static const MethodChannel _channel = const MethodChannel('encryptions');
 
@@ -53,14 +55,14 @@ The parameter is passed to the native interface via the key-value map, and the n
 ### For iOS platform
 ###### First you need to build it first:
 
-```
+```dart
 cd encryptions/example; 
 flutter build ios --no-codesign
 ```
 
 Open the project in Xcode, there is a `<SwiftEncryptionsPlugin.class>`, which can be implemented in this:
 
-```
+```swift
 public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     let args = call.arguments as! [String: Any];
     switch call.method {
@@ -83,7 +85,7 @@ public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
 Because you need to use **Argon2**, you need to call the c native code in swift, try some methods will not work, and later found that it is actually relatively simple, directly in the Supported Files there is a reference to the 
 `<encryptions-umbrella.h>` file, you can directly call:
 
-```
+```objectivec
 #import "EncryptionsPlugin.h"
 #import "argon2.h"
 func argon2i(password: Data, salt: Data)-> Data {
@@ -104,7 +106,7 @@ func argon2i(password: Data, salt: Data)-> Data {
 Open the project in Android Studio. For the first time you need to build `<cd encryptions/example>`; flutter build apk, the iOS is similar). Android implementation will be a bit simpler, here only talk about how to call c native code:
 
 First add extra steps to `<build.gradle>`:
-```
+```java
 externalNativeBuild {
     cmake {
         path "src/main/cpp/CMakeLists.txt"
@@ -113,7 +115,7 @@ externalNativeBuild {
 ```
 Then specify the compilation step in `<CMakeLists.txt>`, I need to compile a library of **argon2**, and a library called by **JNI**.
 
-```
+```java
 add_library(
         argon2
         SHARED
