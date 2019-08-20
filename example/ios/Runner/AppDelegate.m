@@ -1,4 +1,3 @@
-#include "AppDelegate.h"
 #include "GeneratedPluginRegistrant.h"
 #import "EncryptionsPlugin.h"
 #import <encryptions/encryptions-Swift.h>

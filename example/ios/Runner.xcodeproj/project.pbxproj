@@ -23,6 +23,7 @@
 		DBE0D20F2303FB2900DC2659 /* argon2_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0D20E2303FB2900DC2659 /* argon2_test.swift */; };
 		DBE0D2112303FB5600DC2659 /* cipher_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0D2102303FB5600DC2659 /* cipher_test.swift */; };
 		DBE0D2132303FB8600DC2659 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBE0D2122303FB8600DC2659 /* Info.plist */; };
+		DBE0D21923041B9000DC2659 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DBE0D21823041B8D00DC2659 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,6 +67,7 @@
 		DBE0D20E2303FB2900DC2659 /* argon2_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = argon2_test.swift; sourceTree = "<group>"; };
 		DBE0D2102303FB5600DC2659 /* cipher_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cipher_test.swift; sourceTree = "<group>"; };
 		DBE0D2122303FB8600DC2659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBE0D21823041B8D00DC2659 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +90,6 @@
 				783266CE0D6374E5FF3C7568 /* Pods-Runner.release.xcconfig */,
 				C4BFEA49B2EAF034319ECE17 /* Pods-Runner.profile.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -116,6 +117,7 @@
 		97C146E51CF9000F007C117D = {
 			isa = PBXGroup;
 			children = (
+				DBE0D21823041B8D00DC2659 /* Default-568h@2x.png */,
 				DBE0D2152303FCED00DC2659 /* New Group */,
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
@@ -247,6 +249,7 @@
 				DBE0D2132303FB8600DC2659 /* Info.plist in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
+				DBE0D21923041B9000DC2659 /* Default-568h@2x.png in Resources */,
 				DBE0D20A2303F5F200DC2659 /* Runner.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
