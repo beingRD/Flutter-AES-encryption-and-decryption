@@ -1,4 +1,4 @@
-# AES encryption Flutter Plugin
+# AES256/CBC/NoPadding/  encryption & decryption Flutter Plugin
 
 A new flutter plugin project.
 
